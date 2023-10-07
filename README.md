@@ -10,6 +10,12 @@
 
 ![Android](https://img.shields.io/badge/BlueStacks-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
+
+*1. First you need to create a virtual environment (venv)*
+```
+python3 -m venv venv
+```
+
 There are builder .exe files in this stealer, to create the .exe file you must run builder.py.
 
 ![image](https://github.com/reyzovw/celestial_stealler/assets/120815160/9be5884c-7766-44d9-aa37-5f9f77cfb007)
