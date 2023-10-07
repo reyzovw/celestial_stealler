@@ -9,3 +9,7 @@
 ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white)
 
 ![Android](https://img.shields.io/badge/BlueStacks-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+
+There are builder .exe files in this stealer, to create the .exe file you must run builder.py.
+
+![image](https://github.com/reyzovw/celestial_stealler/assets/120815160/9be5884c-7766-44d9-aa37-5f9f77cfb007)
