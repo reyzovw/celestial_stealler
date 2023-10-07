@@ -15,6 +15,10 @@
 ```
 python3 -m venv venv
 ```
+**2. Then you have to activate it**
+```
+venv/Scripts/Activate1.ps if you using powershell (now windows terminal) or venv/Scripts/activate.bat if you using default cmd
+```
 
 There are builder .exe files in this stealer, to create the .exe file you must run builder.py.
 
