@@ -1,2 +1,3 @@
 # celestial_stealler
-Modern stealer Steam accounts, Cookies from popular browsers, BlueStacks virtual spaces, Discord tokens. 
+Stack:
+![Python 3.10](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
