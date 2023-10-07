@@ -20,7 +20,7 @@ python3 -m venv venv
 ```
 **3. Then you have to activate it**
 ```
-venv/Scripts/Activate1.ps if you using powershell (now windows terminal) or venv/Scripts/activate.bat if using a cmd
+venv/Scripts/Activate1.ps if you using powershell or venv/Scripts/activate.bat if using a cmd
 ```
 **4. Run builder.py and build a .exe file**
 ```
