@@ -11,7 +11,7 @@
 ![Android](https://img.shields.io/badge/BlueStacks-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
 
-*1. First you need to create a virtual environment (venv)*
+**1. First you need to create a virtual environment (venv)**
 ```
 python3 -m venv venv
 ```
